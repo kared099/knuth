@@ -33,9 +33,11 @@ int main () {
             if(elevator < rf1) {
                elevator++;
                std::cout << "Elevator is going up.\n";
+               std::cout << "Elevator is now on floor " << elevator << "\n";
             } else if (elevator > rf1) {
                elevator--;
                std::cout << "Elevator is going down.\n";
+               std::cout << "Elevator is now on floor " << elevator << "\n";
             }
          }
          std::cout << "Elevator is now on floor " << rf1 << ", opening doors.\n";
@@ -45,9 +47,11 @@ int main () {
             if(elevator < rf2) {
                elevator++;
                std::cout << "Elevator is going up.\n";
+               std::cout << "Elevator is now on floor " << elevator << "\n";
             } else if (elevator > rf2) {
                elevator--;
                std::cout << "Elevator is going down.\n";
+               std::cout << "Elevator is now on floor " << elevator << "\n";
             }
          }
          std::cout << "Elevator is now on floor " << rf2 << ", opening doors.\n";
