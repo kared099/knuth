@@ -1,0 +1,30 @@
+kind Event; kind Systemstate; Systemstate floor; Event EvTick;
+Event evTick;
+Systemstate floor;
+kind Guard;
+Guard gIamInFloor3;
+
+gIamInFloor3 = floor == 3;
+
+Guard gForbiddenMoveInThirdFloor;
+gForbiddenMoveInThirdFloor = floor > 4 || floor < 2;
+
+sm{
+ S;
+ states{Initial;
+  IamInFloor3;
+  IamInFloor2;
+  IamInFloor4;
+  IamInAWrongFloor;
+ };
+ Actions{
+    doPrintInfo{
+        print("Forbidden foor=",floor,"\n");
+    };
+ };
+ 
+ t{Initial;IamInFloor3;gIamInFloor3;EvTick;};
+ t{IamInFloor3;IamInAWrongFloor;gForbiddenMoveInThirdFloor;doPrintInfo;EvTick;};
+
+};
+

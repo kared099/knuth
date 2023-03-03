@@ -1,0 +1,2 @@
+#!/bin/bash
+g++ elevator_test.cpp -lpthread && ./a.out | grep "now on" | grep '[0-9]' -oP | gawk -e 'BEGIN{print("kind Event; kind Systemstate; Systemstate floor; Event EvTick; Simulation{Start{S;};");} {print("floor=",$0,";EvTick;");} END{print("};");}' > test.ceps && ceps model.ceps test.ceps
