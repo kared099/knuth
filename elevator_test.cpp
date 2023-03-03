@@ -33,7 +33,7 @@ int main () {
             if(elevator < rf1) {
                elevator++;
                std::cout << "Elevator is going up.\n";
-            } else if (elevator > rf2) {
+            } else if (elevator > rf1) {
                elevator--;
                std::cout << "Elevator is going down.\n";
             }
